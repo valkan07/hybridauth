@@ -100,6 +100,10 @@ class Apple extends OAuth2
     {
         parent::initialize();
         $this->AuthorizeUrlParameters['response_mode'] = 'form_post';
+
+        if (is_array($this->tokenRefreshParameters)){
+            $this->tokenRefreshParameters['client_id'] = $this->clientId;
+        }
     }
 
     /**

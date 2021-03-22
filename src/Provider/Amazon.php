@@ -42,6 +42,15 @@ class Amazon extends OAuth2
      */
     protected $apiDocumentation = 'https://developer.amazon.com/docs/login-with-amazon/documentation-overview.html';
 
+    protected function initialize()
+    {
+        parent::initialize();
+
+        if (is_array($this->tokenRefreshParameters)){
+            $this->tokenRefreshParameters['client_id'] = $this->clientId;
+        }
+    }
+
     /**
      * {@inheritdoc}
      */
