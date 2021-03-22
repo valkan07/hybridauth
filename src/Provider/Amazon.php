@@ -48,6 +48,7 @@ class Amazon extends OAuth2
 
         if (is_array($this->tokenRefreshParameters)){
             $this->tokenRefreshParameters['client_id'] = $this->clientId;
+            $this->tokenRefreshParameters['client_secret'] = $this->clientSecret;
         }
     }
 
